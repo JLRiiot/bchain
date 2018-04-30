@@ -1,0 +1,30 @@
+Blockchain:
+initialize
+
+new_block(..)
+
+new_transaction(...)
+
+proof_of_work(...)  ->   X hours to generate a new block
+
+curl -X POST \
+  http://0.0.0.0:8080/transactions/new \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: b1e0b53f-7020-482c-a2b5-95c8c89c1ab3' \
+  -d '{
+	"sender": 123456,
+	"recipient": 345,
+	"amount": 123
+}'
+
+curl -X GET \
+  http://0.0.0.0:8080/chain \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: f606706f-a04d-4c67-a09c-743323832825'
+  
+  curl -X GET \
+  http://0.0.0.0:8080/mine \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 0e70b71e-934e-4c42-a194-e484e1a0f208'
